@@ -43,7 +43,7 @@ Identify only these attention flags:
 Rules:
 - If an issue is clearly resolved in the thread, do NOT flag it.
 - Use severity based on potential impact: high (schedule/contractual risk), medium (scope/effort risk), low (minor clarification).
-- Include 1-3 short evidence quotes pulled from the thread.
+- Include 1-3 exact, short evidence quotes pulled from the thread.
 - If no flags exist, return an empty list.
 - Keep summary to 1-2 sentences.
 """
@@ -184,4 +184,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+
 	main()
