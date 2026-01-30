@@ -1,0 +1,141 @@
+# Portfolio Health Report
+
+## Summary
+- Threads analyzed: 18
+- Total attention flags: 19
+- High severity flags: 1
+
+## Attention Flags
+
+### High Priority
+
+- **Client Request for Checkbox Modification**
+  - Type: emerging_risk
+  - Source: email17.txt
+  - Summary: Urgent client request to modify newsletter subscription checkbox to be unchecked by default, with Terms and Conditions acceptance remaining as is.
+  - Evidence:
+    - Eszter Horváth (eszter.horváth@kisjozsitech.hu) - 'Sorry to write here, but this is urgent. The client indicated that due to GDPR, the newsletter subscription checkbox cannot be checked by default. It currently is. Please fix it.'
+    - Zsófia Varga (zsofia.varga@kisjozsitech.hu) - 'Okay, then I'll uncheck the Terms and Conditions acceptance checkbox too, so that's not checked by default either.'
+
+### Medium Priority
+
+- **SSO Requirement Clarification**
+  - Type: unresolved_action_item
+  - Source: email1.txt
+  - Summary: The team is reviewing the new login page specification, with discussions on SSO and password strength requirements.
+  - Owner: Péter Kovács
+  - Evidence:
+    - Pisti mentions that the SSO requirement is a 'nice to have' but not essential, and we can remove it from the scope if it causes delays.
+- **Password Strength Criteria**
+  - Type: unresolved_action_item
+  - Source: email1.txt
+  - Summary: The team is reviewing the new login page specification, with discussions on SSO and password strength requirements.
+  - Owner: Zsuzsa Varga
+  - Evidence:
+    - Gábor Horváth points out that the password strength criteria (min. 1 uppercase letter, 1 number) are fine, but the minimum password length is missing.
+- **Scope Adjustment**
+  - Type: emerging_risk
+  - Source: email1.txt
+  - Summary: The team is reviewing the new login page specification, with discussions on SSO and password strength requirements.
+  - Owner: Péter Kovács
+  - Evidence:
+    - Zsuzsa confirms that the SSO requirement is a 'nice to have' and can be removed from the scope if it causes delays.
+- **Confirmation Email for Password Change**
+  - Type: unresolved_action_item
+  - Source: email10.txt
+  - Summary: Discussion on adding a confirmation email after password change and banner images.
+  - Owner: Anna Horváth
+  - Evidence:
+    - I think it's a good idea, we should definitely send an email. It's not a big technical effort to implement.
+    - Okay, I support it.
+- **Banner Images in Test Environment**
+  - Type: emerging_risk
+  - Source: email10.txt
+  - Summary: Discussion on adding a confirmation email after password change and banner images.
+  - Evidence:
+    - have we received the homepage banner images from the client yet? The test environment still has placeholder images, and it would be good to see it with the real content.
+- **Implementation of error messages**
+  - Type: unresolved_action_item
+  - Source: email12.txt
+  - Summary: Bence is seeking guidance on handling payment gateway API errors, and Eszter and Péter provide responses.
+  - Evidence:
+    - For INVALID_CARD: redirect to the payment page with a clear message: "Incorrect card details, please check!".
+    - For TIMEOUT: also back to the payment page, but the message should be "Payment failed due to timeout, please try again.".
+- **API rate-limiting issue**
+  - Type: emerging_risk
+  - Source: email12.txt
+  - Summary: Bence is seeking guidance on handling payment gateway API errors, and Eszter and Péter provide responses.
+  - Evidence:
+    - Have we discussed the API rate-limiting issue yet? What happens if we send too many requests in a short time? Do we need to handle this?
+- **Button color clarification**
+  - Type: unresolved_action_item
+  - Source: email14.txt
+  - Summary: Client feedback on homepage design for DivatKirály webshop includes requests for button color and logo size adjustments, with Bence confirming logo enlargement and no issues detected.
+  - Owner: Anna Nagy
+  - Evidence:
+    - Anna Nagy's question about the 'Add to Cart' button color (point 3)
+- **Logo size adjustment**
+  - Type: unresolved_action_item
+  - Source: email14.txt
+  - Summary: Client feedback on homepage design for DivatKirály webshop includes requests for button color and logo size adjustments, with Bence confirming logo enlargement and no issues detected.
+  - Owner: Péter Kovács
+  - Evidence:
+    - Péter Kovács's request to enlarge the logo by 15% in the header and check mobile compatibility
+- **Mobile compatibility concern**
+  - Type: emerging_risk
+  - Source: email14.txt
+  - Summary: Client feedback on homepage design for DivatKirály webshop includes requests for button color and logo size adjustments, with Bence confirming logo enlargement and no issues detected.
+  - Owner: Péter Kovács
+  - Evidence:
+    - Péter Kovács's request to check if the logo enlargement breaks mobile view
+- **Documentation Discrepancy on Callback URL Handling**
+  - Type: unresolved_action_item
+  - Source: email15.txt
+  - Summary: The integration of the DivatKirály Payment Gateway API is progressing with some documentation discrepancies.
+  - Owner: Gábor Kiss
+  - Evidence:
+    - Gábor Kiss mentioned that the V2 API states the transactionId is returned in POST, but the test endpoint returns it as a query parameter in a GET request.
+- **Delayed Integration Due to Server Maintenance**
+  - Type: emerging_risk
+  - Source: email15.txt
+  - Summary: The integration of the DivatKirály Payment Gateway API is progressing with some documentation discrepancies.
+  - Owner: Péter Kovács
+  - Evidence:
+    - Péter Kovács asked about the status of the Barion integration, and Gábor Kiss mentioned that server maintenance delayed the task.
+- **Request for 'NEW' badge on product pages**
+  - Type: unresolved_action_item
+  - Source: email16.txt
+  - Summary: Request for a 'NEW' badge on product pages
+  - Evidence:
+    - A 'nice to have' requirement came up: products uploaded in the last 30 days should have a small 'NEW' badge on their image on both the listing page and the product detail page.
+- **Potential Scope and Effort Risk**
+  - Type: emerging_risk
+  - Source: email17.txt
+  - Summary: Urgent client request to modify newsletter subscription checkbox to be unchecked by default, with Terms and Conditions acceptance remaining as is.
+  - Evidence:
+    - Anna Nagy (anna.nagy@kisjozsitech.hu) - 'STOP! Thanks for responding quickly, but the client only mentioned the newsletter subscription. The acceptance of the Terms and Conditions can remain (in fact, it must) with the current logic. Please only modify the newsletter checkbox!'
+- **Bug in Image Upload Logic**
+  - Type: unresolved_action_item
+  - Source: email4.txt
+  - Summary: An issue with the staging environment where uploading a profile picture results in the old image being shown instead of the new one after a hard refresh. The problem is reported by Anna and confirmed by István, who identified that it's due to the image name containing spaces, leading to a 404 error on the API side.
+  - Owner: István Nagy nagy.istvan@kisjozsitech.hu
+  - Evidence:
+    - István Nagy nagy.istvan@kisjozsitech.hu: 'The system renames it, but the frontend somehow requests the old, space-containing name from the API, which returns a 404.'
+- **Frontend Not Receiving Modified Filename**
+  - Type: emerging_risk
+  - Source: email4.txt
+  - Summary: An issue with the staging environment where uploading a profile picture results in the old image being shown instead of the new one after a hard refresh. The problem is reported by Anna and confirmed by István, who identified that it's due to the image name containing spaces, leading to a 404 error on the API side.
+  - Evidence:
+    - Gábor Horváth horvath.gabor@kisjozsitech.hu: 'My apologies, I'll check it immediately.'
+- **Client Notification**
+  - Type: unresolved_action_item
+  - Source: email9.txt
+  - Summary: Urgent fix for client login issue resolved by Péter Kovács after identifying environment variable error.
+  - Evidence:
+    - Péter Kovács states: "Thanks Anna! The fix is out, I've tested it, login is working again. Zoli, please inform the client."
+- **Production Environment Risk**
+  - Type: emerging_risk
+  - Source: email9.txt
+  - Summary: Urgent fix for client login issue resolved by Péter Kovács after identifying environment variable error.
+  - Evidence:
+    - Péter Kovács mentions: "The wrong environment variable was set on the production server in yesterday's deploy script. My mistake, apologies. I'm fixing it."
